@@ -1,13 +1,14 @@
 ---
-id: 2
-title: О сайте
-date: 2008-07-30T05:19:49+03:00
+id: 10
+title: Об авторе
+date: 2008-09-19T04:32:56+03:00
 author: h4
 layout: page
-guid: http://mkhl.brnv.ru/dnf/?page_id=2
+guid: http://mkhl.brnv.ru/?page_id=10
 ---
-В книге «[Ошибки web-дизайна и как их устранить до того, как вы лишитесь посетителей](http://www.books.ru/books/oshibki-web-dizaina-i-kak-ikh-ustranit-488864/)» упоминается ныне не существующий сайт DesignNotFound.com
+# Михаил Баранов
 
-Собственно оттуда и пришло имя этого сайта, уж больно книжка хорошая.
+![Михаил Баранов. Фото](http://mkhl.brnv.ru/wp-content/uploads/2009/06/h4-tn-01-sml.png) 
 
-Зачем нужен этот ещё один блог на wordpress? Для самовыражения, естественно. И с целью донести свои мысли о веб-разработке и том что рядом. Может и дизайн найдём.
+  * Работаю в [ARRIVAL](https://arrival.com/)
+  * Пишу в [Твиттер](https://twitter.com/_h4_) и на [Гитхаб](https://github.com/h4/).
