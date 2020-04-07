@@ -5,7 +5,7 @@ author:      Mikhail Baranov
 # remote_theme: johno/pixyll
 description: "Заметки Миши Баранова"
 baseurl:     ""
-url:         "https://mkhl.brnv.ru/"
+url:         "https://mkhl.brnv.ru"
 date_format: "%d.%m.%Y"
 header_pages:
  - about.md
