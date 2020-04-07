@@ -3,8 +3,8 @@ title:       mkhl.brnv.ru
 email:       mkhl@brnv.ru
 author:      Mikhail Baranov
 # remote_theme: johno/pixyll
-description: ""
-baseurl:     ""
+description: "Заметки Миши Баранова"
+baseurl:     "/mkhl.brnv.ru"
 url:         "https://mkhl.brnv.ru/"
 date_format: "%d.%m.%Y"
 header_pages:
@@ -115,7 +115,7 @@ markdown:     kramdown
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
-paginate:     10
+paginate:     3
 sass:
   style: compressed
 plugins:
