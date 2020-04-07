@@ -4,7 +4,7 @@ email:       mkhl@brnv.ru
 author:      Mikhail Baranov
 # remote_theme: johno/pixyll
 description: "Заметки Миши Баранова"
-baseurl:     "/mkhl.brnv.ru"
+baseurl:     ""
 url:         "https://mkhl.brnv.ru/"
 date_format: "%d.%m.%Y"
 header_pages:
