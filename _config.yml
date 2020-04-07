@@ -2,7 +2,7 @@
 title:       mkhl.brnv.ru
 email:       mkhl@brnv.ru
 author:      Mikhail Baranov
-remote_theme: johno/pixyll
+# remote_theme: johno/pixyll
 description: ""
 baseurl:     ""
 url:         "https://mkhl.brnv.ru/"
