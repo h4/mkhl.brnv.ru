@@ -10,7 +10,8 @@ permalink: /increase_labels_limit_in_aiopg_sa/
 Недавно мы решили разнести таблицы в нашей базе по разным схемам, используя их как пространства имён. Так сложилось, что мы не приветсвуем сокращения, поэтому для некоторые таблицы и поля в них были достаточно длинными. Само по себе это не плохо, но *SQLAlchemy*, которую мы используем как *query builder*, использует алиасы для полей таблиц, чтобы избежать конфликта имён. То есть 
 
 ```python
-sa.select(['id', 'title'], use_labels=True).select_from('my_table')
+sa.select(['id', 'title'], use_labels=True)\
+  .select_from('my_table')
 ```
 
 превратится в 
@@ -52,6 +53,8 @@ def get_dialect():
   return _dialect
 
 dialect = get_dialect()
-app['db'] = await create_engine(dsn=settings.db_dsn, echo=settings.debug, dialect=dialect)
+app['db'] = await create_engine(dsn=settings.db_dsn, 
+                                echo=settings.debug, 
+                                dialect=dialect)
 ```
 
