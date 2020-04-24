@@ -1,6 +1,6 @@
 # Увеличение длины алисов для полей в SQLAlchemy
 
-Недавно мы решили разнести таблицы в нашей базе по разным схемам, используя их как пространства имён. Так сложилось, что мы не приветсвуем сокращения, поэтому для некоторые таблицы и поля в них были достаточно длинными. Само по себе это не плохо, но SQLAlchemy, которую мы используем как query builder, использует алиасы для полей таблиц, чтобы избежать конфликта имён. То есть 
+Недавно мы решили разнести таблицы в нашей базе по разным схемам, используя их как пространства имён. Так сложилось, что мы не приветсвуем сокращения, поэтому для некоторые таблицы и поля в них были достаточно длинными. Само по себе это не плохо, но *SQLAlchemy*, которую мы используем как *query builder*, использует алиасы для полей таблиц, чтобы избежать конфликта имён. То есть 
 
 ```python
 sa.select(['id', 'title'], use_labels=True).select_from('my_table')
@@ -18,15 +18,13 @@ FROM
 
 А при явном указании схемы `my_table_id` заменится на `my_schema_my_table_id`.
 
-В этих алиасах нет ничего плохого, одна польза, если бы не [ограничение Postgres](https://www.postgresql.org/docs/current/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS) для максимальной длины идентификатор в **63** символа. В итоге алиас `impicit_schema_name_very_specific_table_name_unbeatable_field_name` превращатся при компиляции запроса в `impicit_schema_name_very_specific_table_name_unbeatable_fiel_1` и дальше мы получем ошибку вида 
+Опять же, в алиасах нет ничего плохого, одна польза, если бы не [ограничение Postgres](https://www.postgresql.org/docs/current/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS) на максимальную длину идентификатора в **63** символа. В итоге алиас `impicit_schema_name_very_specific_table_name_unbeatable_field_name` превращатся при компиляции запроса в `impicit_schema_name_very_specific_table_name_unbeatable_fiel_1` и дальше мы получем ошибку вида 
 
 ```
 could not locate column in row for column very_specific_table_name.unbeatable_field_name
 ```
 
-
-
-Чтобы обойти это ограничение при использовании чистой SQLAlchemy достаточно добавить аргумент **label_length** при [вызове create_engine()](https://docs.sqlalchemy.org/en/13/core/engines.html#sqlalchemy.create_engine.params.label_length).
+Чтобы обойти это ограничение при использовании чистой SQLAlchemy достаточно добавить аргумент **label_length** [при вызове create_engine()](https://docs.sqlalchemy.org/en/13/core/engines.html#sqlalchemy.create_engine.params.label_length).
 
 Мы используем обёртку aiopg.sa, и там я не нашёл простого способа передать этот параметр, поэтому пришлось вручную конфигурировать диалект, [используемый при создании Engine](https://github.com/aio-libs/aiopg/blob/master/aiopg/sa/engine.py#L33).
 
