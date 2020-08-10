@@ -1,6 +1,6 @@
 ---
 id: 797
-title: Автообновление сертификато с certbot на Ubuntu 16.04
+title: Автообновление сертификатов с certbot на Ubuntu 16.04
 date: 2020-04-24T23:28:00+03:00
 author: h4
 layout: post
